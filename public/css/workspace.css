@@ -1,0 +1,148 @@
+/* Authenticated workspace. Extends premium.css materials without restyling public pages. */
+.dashboard-page {
+    --ws-space:clamp(16px,2.4vw,34px); --ws-radius:22px;
+    --ws-panel:var(--fc-surface); --ws-tint:#e5f3e9; --ws-shadow:0 6px 24px #123b2408;
+    color:var(--fc-text);background:radial-gradient(ellipse at 2% 12%,#cdebdc85,transparent 38%),radial-gradient(ellipse at 90% 1%,#f5e9bb45,transparent 40%),#f4f8f5;
+}
+[data-theme=dark] .dashboard-page {--ws-tint:#1c3b29;--ws-shadow:0 6px 24px #00000018;background:radial-gradient(ellipse at 2% 10%,#15462d85,transparent 38%),radial-gradient(ellipse at 95% 0,#4a422022,transparent 38%),#0b1510}
+/* Material variants reuse the public optical tokens. Subtle is deliberately low-cost. */
+.fc-glass-subtle {--glass-fill:var(--fc-glass-regular);--fc-glass-blur:8px;--fc-glass-saturation:120%}
+.dashboard-page .fc-liquid-glass {background:var(--glass-fill);border:1px solid var(--fc-glass-border);box-shadow:var(--fc-glass-shadow),inset 0 1px 0 var(--fc-glass-light),inset 0 -1px 0 var(--fc-glass-rim)}
+.dashboard-page .fc-glass-elevated {box-shadow:0 24px 70px #001a2333,0 4px 14px #001a2314,inset 0 1px 0 var(--fc-glass-light)}
+.dashboard-page .dashboard-shell {grid-template-columns:258px minmax(0,1fr);gap:0;max-width:2200px;margin:auto}
+.dashboard-page .dashboard-main {overflow:visible;min-width:0}
+.dashboard-page .dashboard-sidebar {position:sticky;top:16px;height:calc(100dvh - 32px);margin:16px 0 16px 16px;padding:18px 12px;border-radius:26px;color:var(--fc-text);gap:20px;z-index:40;overflow:hidden;min-width:0}
+.dashboard-page .sidebar-head {padding:4px 4px 20px;border-color:var(--fc-border);gap:6px}
+.dashboard-page .sidebar-brand {gap:10px;min-width:0}
+.dashboard-page .sidebar-brand .brand-logo {width:42px;height:42px;flex-basis:42px}
+.dashboard-page .sidebar-brand .brand-copy strong {font-size:17px;color:var(--fc-text)}
+.dashboard-page .sidebar-brand .brand-copy small {color:var(--fc-text-muted);font-size:10px}
+.dashboard-page .sidebar-nav {gap:6px}
+.dashboard-page .nav-caption {color:var(--fc-text-muted);font-size:9px;letter-spacing:.16em;margin:0;padding:0 12px 12px}
+.dashboard-page .sidebar-nav a {gap:11px;min-height:46px;padding:11px 12px;font-size:12px;font-weight:650;color:var(--fc-text-muted);border:1px solid transparent;border-radius:13px;background:transparent;box-shadow:none}
+.dashboard-page .sidebar-nav a::after {display:none}
+.dashboard-page .sidebar-nav a:hover {background:var(--ws-tint);color:var(--fc-text)}
+.dashboard-page .sidebar-nav a.active {background:var(--ws-tint);color:var(--fc-text);border-color:var(--fc-border);box-shadow:inset 0 1px 0 var(--fc-glass-light)}
+.dashboard-page .sidebar-nav a.active::before {left:-5px;top:15px;bottom:15px;width:3px;background:var(--fc-green)}
+.workspace-nav-icon {width:18px;height:18px;flex:0 0 18px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.sidebar-context {margin-top:auto;padding:20px 12px 8px;border-top:1px solid var(--fc-border);display:grid;gap:7px}
+.sidebar-context strong {font-size:12px;font-weight:650}.sidebar-context>span:last-child {font-size:11px;color:var(--fc-text-muted)}
+/* The transparent wrapper is NOT a backdrop root: sibling menus sample the page directly. */
+.dashboard-page .dashboard-topbar {position:sticky;top:16px;margin:16px var(--ws-space) 0;min-height:66px;padding:9px 15px;gap:16px;border:0;border-radius:22px;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;z-index:35;box-shadow:none}
+.fc-workspace-bar-material {position:absolute;inset:0;border-radius:inherit;z-index:-1}
+.workspace-location {display:grid;gap:3px;min-width:0;flex:1}
+.workspace-location>span {font-size:8px;letter-spacing:.18em;color:var(--fc-text-muted);font-weight:800}
+.workspace-location>strong {font-size:13px;font-weight:750;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dashboard-page .topbar-date {font-size:11px;white-space:nowrap;color:var(--fc-text-muted);font-weight:500}
+.dashboard-page .topbar-actions {gap:8px;flex-shrink:0}
+.dashboard-page .topbar-actions :is(.icon-button,.profile-button,.fc-theme-toggle) {border:1px solid var(--fc-border);background:var(--fc-glass-clear);color:var(--fc-text);box-shadow:inset 0 1px 0 var(--fc-glass-light);border-radius:14px;min-height:42px}
+.dashboard-page .profile-button {padding:4px 10px 4px 4px;gap:8px}.dashboard-page .profile-button .avatar {width:32px;height:32px}
+.dashboard-page .profile-summary {border:0;background:none}.dashboard-page .profile-summary strong {font-size:11px}.dashboard-page .profile-summary small {font-size:9px;color:var(--fc-text-muted)}
+.dashboard-page .profile-dropdown {position:absolute;top:calc(100% + 15px);right:0;border-radius:20px;padding:16px;width:280px}
+.dashboard-page .profile-dropdown.open {animation:ws-menu-enter .18s ease-out}
+.dashboard-page .profile-dropdown :is(a,button) {border-radius:10px;min-height:44px;color:var(--fc-text)}
+.dashboard-page .profile-dropdown :is(a,button):hover {background:var(--ws-tint)}
+.dashboard-page .notification-panel {position:absolute;border-radius:22px;top:calc(100% + 15px)}
+.dashboard-page .notification-item.is-unread {background:var(--fc-glass-clear)}
+.dashboard-page .dashboard-content {padding:28px var(--ws-space) 48px;max-width:1600px;scroll-margin-top:110px}
+.dashboard-page :is(.dashboard-hero,.content-hero) {padding:0 0 23px;margin-bottom:24px;gap:18px;border-bottom:1px solid var(--fc-border);background:none;border-radius:0}
+.dashboard-page :is(.dashboard-hero,.content-hero) h1 {font-size:clamp(25px,2.5vw,38px);letter-spacing:-.05em;line-height:1.12;font-weight:700}
+.dashboard-page .eyebrow {color:var(--fc-green-deep);font-size:9px;letter-spacing:.16em}
+[data-theme=dark] .dashboard-page .eyebrow {color:#c2d9ac}
+.dashboard-page .workspace-welcome {padding:clamp(24px,3vw,38px);border:1px solid var(--fc-border);border-radius:var(--ws-radius);background:radial-gradient(ellipse at 90% 5%,#bbdfb854,transparent 62%),linear-gradient(110deg,var(--ws-panel),var(--ws-tint));min-height:180px}
+.workspace-welcome>:not(.fc-microdots) {position:relative;z-index:1}.workspace-welcome>.fc-microdots {width:38%;height:100%;--microdot-intensity:.52}
+.dashboard-page .workspace-welcome h1 {margin-bottom:12px}.dashboard-page .workspace-welcome span {font-size:13px;color:var(--fc-text-muted)}
+/* Stable content surfaces: no backdrop filters on tables or long forms. */
+.dashboard-page :is(.portal-panel,.content-editor-section,.editor-card,.directory-card,.profile-card,.security-card,.member-card,.announcement-card,.announcement-detail,.filter-panel,.notification-history,.quick-actions) {background:var(--ws-panel);color:var(--fc-text);border:1px solid var(--fc-border);border-radius:var(--ws-radius);box-shadow:var(--ws-shadow)}
+.dashboard-page :is(.portal-panel,.content-editor-section,.security-card,.quick-actions) {padding:clamp(16px,2vw,26px)}
+.dashboard-page :is(.panel-heading,.section-heading,.editor-section-heading) {gap:14px;align-items:center}
+.dashboard-page :is(.panel-heading,.section-heading,.editor-section-heading) h2 {font-size:19px;font-weight:700;letter-spacing:-.035em}
+.dashboard-page .summary-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border:0;background:transparent;overflow:visible;margin-block:24px}
+.dashboard-page .summary-card {min-width:0;padding:22px;border:1px solid var(--fc-border);border-radius:18px;background:var(--ws-panel);box-shadow:var(--ws-shadow);min-height:146px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.dashboard-page .summary-card strong {font-size:clamp(24px,2.4vw,34px);font-weight:650;letter-spacing:-.045em;color:var(--fc-text);line-height:1.12;overflow-wrap:anywhere}
+.dashboard-page .summary-card>span {font-size:11px;color:var(--fc-text-muted);font-weight:650}.dashboard-page .summary-card small {font-size:10px;color:var(--fc-text-muted)}
+.dashboard-page .summary-card.success {border-top:2px solid #469c6b}.dashboard-page .summary-card.warning {border-top:2px solid #c5a840}
+.dashboard-page .action-grid {gap:10px}.dashboard-page .action-grid a {min-height:62px;padding:16px;border:1px solid var(--fc-border);border-radius:13px;background:var(--fc-surface-muted);font-size:12px;transition:background .18s,transform .18s}
+.dashboard-page .action-grid a:hover {background:var(--ws-tint);transform:translateY(-2px)}
+.dashboard-page :is(.fc-bulletin,.water-module[aria-label="My water contributions"]) {border-radius:var(--ws-radius);border:1px solid var(--fc-border);box-shadow:var(--ws-shadow)}
+.dashboard-page .table-wrap,.dashboard-page .water-table-scroll {border-radius:14px;border:1px solid var(--fc-border);background:var(--ws-panel);overflow-x:auto;max-width:100%;overscroll-behavior-inline:contain}
+.dashboard-page :is(.table-wrap,.water-table) th {background:var(--fc-surface-muted);color:var(--fc-text-muted);font-size:10px;letter-spacing:.07em;font-weight:750;padding:13px 16px}
+.dashboard-page :is(.table-wrap,.water-table) td {background:var(--ws-panel);color:var(--fc-text);font-size:12px;padding:14px 16px;vertical-align:middle;font-variant-numeric:tabular-nums}
+.dashboard-page :is(.table-wrap,.water-table) tr:hover td {background:var(--fc-surface-muted)}
+.dashboard-page :is(.status-pill,.water-badge) {border-radius:7px;padding:5px 9px;font-size:10px;font-weight:700}
+.dashboard-page :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {border:1px solid var(--fc-border);border-radius:11px;background:var(--fc-surface);color:var(--fc-text);min-height:44px;box-shadow:inset 0 1px 2px #073b2305}
+.dashboard-page :is(input,select,textarea):focus {outline:2px solid var(--fc-focus-color);outline-offset:2px;box-shadow:none}
+.dashboard-page :is(input,textarea)[readonly] {background:var(--fc-surface-muted)}
+.dashboard-page :is(.form-columns,.form-grid,.profile-layout,.member-layout) {min-width:0}
+.dashboard-page :is(.form-actions,.filter-actions,.row-actions) {flex-wrap:wrap;gap:8px}
+.dashboard-page .button {min-height:44px;border-radius:12px;font-size:12px;font-weight:750;transition:background .18s,box-shadow .18s,transform .18s}
+.dashboard-page .button:active {transform:translateY(1px)}
+.dashboard-page :is(button,input):disabled {opacity:.55;cursor:not-allowed}
+.dashboard-page :is(.dashboard-alert,.water-alert,.water-error) {border-radius:14px;line-height:1.6}
+.dashboard-page :is(.empty-table-cell,.notification-empty) {padding:32px 20px;line-height:1.7;color:var(--fc-text-muted)}
+.dashboard-page .coming-soon {border-radius:24px;background:radial-gradient(ellipse at top right,var(--ws-tint),transparent 65%),var(--ws-panel);padding:clamp(24px,5vw,64px)}
+/* Category controls: subtle material, stable data panels underneath. */
+.dashboard-page :is(.content-categories,.payment-category-rail,.notice-filters) {border-radius:16px}
+.dashboard-page .content-categories {background:var(--fc-glass-regular);box-shadow:inset 0 1px 0 var(--fc-glass-light)}
+.dashboard-page .water-dialog {border-radius:24px;border:1px solid var(--fc-glass-border);background:var(--fc-glass-elevated);color:var(--fc-text);box-shadow:0 30px 100px #0005,inset 0 1px 0 var(--fc-glass-light);backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);max-width:calc(100vw - 24px);max-height:calc(100dvh - 32px);overflow:auto}
+.dashboard-page .water-dialog::backdrop {background:#021e1477;backdrop-filter:blur(4px)}
+@keyframes ws-menu-enter {from{transform:translateY(-5px);opacity:.7}to{transform:translateY(0);opacity:1}}
+@keyframes ws-content-enter {from{transform:translateY(6px)}to{transform:translateY(0)}}
+.dashboard-page .dashboard-content>section {animation:ws-content-enter .35s var(--fc-ease-premium)}
+@media(min-width:981px) and (max-width:1200px){.dashboard-page .topbar-date{display:none}.dashboard-page .dashboard-shell{grid-template-columns:236px minmax(0,1fr)}.dashboard-page .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:980px){
+    .dashboard-page .dashboard-shell{display:block}.dashboard-page .dashboard-sidebar{position:fixed;inset:12px auto 12px 12px;top:12px;margin:0;width:min(310px,calc(100vw - 36px));height:calc(100dvh - 24px);z-index:60;transform:translateX(calc(-100% - 24px));transition:transform .3s var(--fc-ease-premium);padding:18px 14px}
+    .dashboard-page .dashboard-sidebar.open{transform:translateX(0)}.dashboard-page .sidebar-close{color:var(--fc-text);background:var(--fc-glass-clear);border-color:var(--fc-border);flex:0 0 36px;width:36px;height:36px}
+    .dashboard-page .sidebar-overlay.open{z-index:55;background:var(--fc-overlay);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+    .dashboard-page .dashboard-topbar{top:10px;margin:10px 16px 0}.dashboard-page .dashboard-content{padding-top:24px}
+    .dashboard-page .menu-toggle{background:var(--fc-glass-clear);color:var(--fc-text);border-color:var(--fc-border);flex-shrink:0}
+}
+@media(max-width:640px){
+    .dashboard-page{--ws-space:14px}.dashboard-page .dashboard-topbar{margin:8px 10px 0;top:8px;padding:8px;min-height:62px;gap:8px;border-radius:19px}
+    .workspace-location{display:none}.dashboard-page .topbar-actions{margin-left:auto;gap:7px}.dashboard-page .profile-button{padding:4px}.dashboard-page .profile-summary{display:none}
+    .dashboard-page .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.dashboard-page .summary-card{padding:16px 12px;min-height:128px}.dashboard-page .summary-card strong{font-size:24px}
+    .dashboard-page .workspace-welcome{padding:24px 20px;min-height:180px}.workspace-welcome>.fc-microdots{width:34%}.dashboard-page .workspace-welcome h1{font-size:29px}
+    .dashboard-page :is(.profile-dropdown,.notification-panel){position:fixed;top:82px;right:12px;left:12px;width:auto;max-width:none;max-height:calc(100dvh - 98px)}
+    .dashboard-page :is(input:not([type=checkbox]):not([type=radio]),select,textarea){font-size:16px}
+    .dashboard-page .water-dialog{border-radius:20px}.dashboard-page .section-heading{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){.dashboard-page *, .dashboard-page *::before,.dashboard-page *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.dashboard-page .fc-liquid-glass,.dashboard-page .water-dialog{background:var(--fc-glass-solid)}}
+@media(prefers-reduced-transparency:reduce){.dashboard-page .fc-liquid-glass,.dashboard-page .water-dialog{background:var(--fc-glass-solid);backdrop-filter:none;-webkit-backdrop-filter:none}.dashboard-page .fc-liquid-glass::before{display:none}}
+@media(forced-colors:active){.dashboard-page .fc-liquid-glass,.dashboard-page .water-dialog{background:Canvas;color:CanvasText;border-color:CanvasText;backdrop-filter:none}.dashboard-page .fc-liquid-glass::before,.dashboard-page .fc-liquid-glass::after{display:none}}
+@media print{.dashboard-page .dashboard-sidebar,.dashboard-page .dashboard-topbar{display:none}.dashboard-page .dashboard-shell{display:block}.dashboard-page .dashboard-content{padding:0}.dashboard-page .fc-microdots{display:none}}
+.dashboard-page .profile-dropdown :is(a,button) {background:transparent;box-shadow:none}
+.dashboard-page .profile-dropdown :is(a,button):hover {background:var(--ws-tint)}
+.dashboard-page .water-dialog button:not(.button-primary) {min-height:44px;border:1px solid var(--fc-border);border-radius:12px;padding:10px 18px;background:var(--fc-glass-clear);color:var(--fc-text);font:inherit;font-size:13px;font-weight:700}
+@media(max-width:640px){
+    .dashboard-page .member-table td {display:block;text-align:left;padding:12px 16px;overflow-wrap:anywhere}
+    .dashboard-page .member-table td::before {display:block;margin-bottom:6px;color:var(--fc-text-muted);font-size:9px;letter-spacing:.08em}
+    .dashboard-page .member-table td strong,.dashboard-page .member-table td span {display:block;text-align:left;max-width:100%}
+    .dashboard-page .member-table .status-pill {display:inline-block}
+}
+/* Preserve the payment sheet's single inner scroll area and safe-area sizing. */
+.dashboard-page .water-dialog.treasurer-qr-dialog {overflow:hidden;max-height:calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+@media(min-width:981px){.dashboard-page .dashboard-sidebar{transform:none;transition:background .35s,border-color .35s,box-shadow .35s}}
+.dashboard-page button.button:not(.button-primary):not(.button-secondary):not(.button-danger) {background:var(--fc-surface-muted);color:var(--fc-text);border:1px solid var(--fc-border)}
+.dashboard-page button.button:not(.button-primary):not(.button-secondary):not(.button-danger):hover {background:var(--ws-tint)}
+
+/* Contain the optical rim: negative insets created phantom scroll extents. */
+.dashboard-page :is(.dashboard-sidebar,.profile-dropdown)::after{inset:0}
+.dashboard-page :is(.dashboard-sidebar,.profile-dropdown,.sidebar-scroll),
+.dashboard-page :is(.dashboard-sidebar,.profile-dropdown) *{box-sizing:border-box;min-width:0}
+.dashboard-page .sidebar-head{flex-shrink:0}
+.dashboard-page .sidebar-brand{flex:1}
+.dashboard-page .sidebar-brand .brand-copy{min-width:0;overflow-wrap:anywhere}
+.dashboard-page .sidebar-scroll{flex:1;display:flex;flex-direction:column;gap:20px;min-height:0;padding:5px;margin:-5px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scroll-padding-block:8px}
+.dashboard-page .sidebar-nav{flex-shrink:0;grid-template-columns:minmax(0,1fr)}
+.dashboard-page .sidebar-nav a span{min-width:0;overflow-wrap:anywhere}
+.dashboard-page .sidebar-nav a.active::before{left:0}
+.dashboard-page .sidebar-context{flex-shrink:0;overflow-wrap:anywhere}
+.dashboard-page .profile-dropdown{position:fixed;left:auto;right:12px;top:82px;width:min(280px,calc(100vw - 24px));max-width:calc(100vw - 24px);height:auto;max-height:calc(100dvh - 94px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;align-content:start;grid-template-columns:minmax(0,1fr);scroll-padding-block:16px}
+.dashboard-page .profile-dropdown :is(p,small,a,button,form){max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.dashboard-page .profile-dropdown :is(a,button){display:block}
+.dashboard-page :is(.sidebar-scroll,.profile-dropdown){scrollbar-width:none;-ms-overflow-style:none}
+.dashboard-page :is(.sidebar-scroll,.profile-dropdown)::-webkit-scrollbar{display:none;width:0;height:0}
+.dashboard-page :is(.sidebar-scroll,.profile-dropdown)::-webkit-scrollbar-button{display:none}
+.dashboard-page .sidebar-scroll:focus-visible{outline-offset:-3px}
+@media(max-height:360px){.dashboard-page .dashboard-sidebar{padding-block:8px;gap:8px}.dashboard-page .sidebar-head{padding-block:0 8px}}

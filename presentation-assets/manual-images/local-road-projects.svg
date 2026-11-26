@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Local Road Projects image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <path d="M310 426 430 426 470 170 380 170z" fill="#333"/>
+  <path d="M385 410 405 340 426 410" fill="none" stroke="#ffd223" stroke-width="10" stroke-dasharray="28 20"/>
+  <text x="400" y="115" text-anchor="middle" font-family="Arial Black,Arial" font-size="34" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="230" text-anchor="middle" font-family="Arial Black,Arial" font-size="46" fill="#17100b">LOCAL ROAD</text>
+  <text x="400" y="285" text-anchor="middle" font-family="Arial Black,Arial" font-size="46" fill="#17100b">PROJECTS</text>
+</svg>

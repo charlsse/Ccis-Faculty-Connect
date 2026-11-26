@@ -1,0 +1,17 @@
+{
+  "payment_id": "py-1102feb0-bb79-47ae-9d1e-e69394d3949c",
+  "payment_request_id": "pr-1102feb0-bb79-47ae-9d1e-e69394d3949c",
+  "business_id": "661f87c614802d6c402cd82d",
+  "reference_id": "synthetic-provider-reference",
+  "country": "PH",
+  "currency": "PHP",
+  "request_amount": 10,
+  "type": "PAY",
+  "capture_method": "AUTOMATIC",
+  "status": "SUCCEEDED",
+  "captures": [{
+    "capture_id": "synthetic_opaque_capture_001",
+    "capture_timestamp": "2026-10-18T12:32:00Z",
+    "capture_amount": 10
+  }]
+}

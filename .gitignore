@@ -1,0 +1,34 @@
+.env
+.env.*
+!.env.example
+/vendor
+/packages
+/node_modules
+/storage/*.key
+/storage/logs/*.log
+/bootstrap/cache/*.php
+/public/storage
+/storage/app/private/*
+!/storage/app/private/.htaccess
+/storage/logs/*test*.txt
+/storage/logs/water-*.xml
+/storage/logs/water-routes.json
+
+# Local runtime data and generated artifacts
+/tmp/
+/debug.log
+/.phpunit.result.cache
+/storage/framework/cache/**
+/storage/framework/sessions/**
+/storage/framework/views/**
+/storage/logs/**
+/database/*.sqlite
+/database/*.sqlite-*
+*.sql
+*.sql.gz
+/storage/app/public/
+/pdf-renders/
+/pdf-ppt-export/
+# Reference PDFs are not application source and can exceed GitHub file limits
+/presentation-assets/*.pdf
+/presentation-assets/manual-images/*.pdf

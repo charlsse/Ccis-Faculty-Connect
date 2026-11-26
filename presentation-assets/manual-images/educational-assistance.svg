@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Educational Assistance image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <circle cx="145" cy="126" r="64" fill="#ffd223" stroke="#17100b" stroke-width="8"/>
+  <text x="400" y="137" text-anchor="middle" font-family="Arial Black,Arial" font-size="36" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="245" text-anchor="middle" font-family="Arial Black,Arial" font-size="42" fill="#17100b">EDUCATIONAL</text>
+  <text x="400" y="300" text-anchor="middle" font-family="Arial Black,Arial" font-size="42" fill="#17100b">ASSISTANCE</text>
+</svg>

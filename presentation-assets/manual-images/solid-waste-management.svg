@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Solid Waste Management image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <path d="M400 150 470 270H330z" fill="#158b52"/>
+  <path d="M305 250h190v82H305z" fill="#158b52"/>
+  <text x="400" y="105" text-anchor="middle" font-family="Arial Black,Arial" font-size="34" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="376" text-anchor="middle" font-family="Arial Black,Arial" font-size="42" fill="#17100b">SOLID WASTE MANAGEMENT</text>
+</svg>

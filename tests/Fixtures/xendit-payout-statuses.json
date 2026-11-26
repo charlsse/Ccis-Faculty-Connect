@@ -1,0 +1,9 @@
+{
+  "source": "https://docs.xendit.co/apidocs/payout-v3-webhook",
+  "purpose": "Documented status vocabulary only. These are not complete provider payloads or evidence of merchant withdrawal API eligibility.",
+  "cases": [
+    {"event": "v3_payout.succeeded", "provider_status": "SUCCEEDED", "local_outcome": "completed"},
+    {"event": "v3_payout.failed", "provider_status": "FAILED", "local_outcome": "failed"},
+    {"event": "v3_payout.reversed", "provider_status": "REVERSED", "local_outcome": "reversed"}
+  ]
+}

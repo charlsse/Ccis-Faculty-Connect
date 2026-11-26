@@ -1,0 +1,23 @@
+# Prepared exposure only. Starting/reconfiguring a public tunnel requires user approval.
+# Supply the existing ngrok token privately via NGROK_AUTHTOKEN, never in this file.
+version: 3
+agent:
+  web_addr: false
+  inspect_db_size: -1
+  update_check: false
+  remote_management: false
+  log_level: warn
+endpoints:
+  - name: facultyconnect-main-demo
+    url: https://skid-porridge-snoring.ngrok-free.dev
+    upstream:
+      url: http://127.0.0.1:8005
+    traffic_policy:
+      on_http_request:
+        - expressions:
+            - "!((req.url.path == '/webhooks/payments/xendit-demo' && req.method == 'POST') || (req.url.path.startsWith('/payments/xendit/demo-return/') && req.method == 'GET'))"
+          actions:
+            - type: custom-response
+              config:
+                status_code: 404
+                body: Not found

@@ -1,0 +1,12 @@
+# Prepared only; no tunnel is started by this file.
+# Edge filtering also protects static files that bypass Laravel middleware.
+on_http_request:
+  - expressions:
+      - "!((req.url.path == '/webhooks/payments/xendit' && req.method == 'POST') || (req.url.path == '/payments/xendit/return' && req.method == 'GET'))"
+    actions:
+      - type: custom-response
+        config:
+          status_code: 404
+          body: Not found
+          headers:
+            content-type: text/plain

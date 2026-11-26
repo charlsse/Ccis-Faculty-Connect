@@ -1,0 +1,24 @@
+# Local template only. No account token or actual public hostname is included.
+version: 3
+agent:
+  web_addr: false
+  inspect_db_size: -1
+  update_check: false
+  remote_management: false
+  log_level: warn
+endpoints:
+  - name: facultyconnect-synthetic
+    url: https://pending.invalid
+    upstream:
+      url: http://127.0.0.1:8002
+    traffic_policy:
+      on_http_request:
+        - expressions:
+            - "!((req.url.path == '/webhooks/payments/xendit' && req.method == 'POST') || (req.url.path == '/payments/xendit/return' && req.method == 'GET'))"
+          actions:
+            - type: custom-response
+              config:
+                status_code: 404
+                body: Not found
+                headers:
+                  content-type: text/plain

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Public Hospital Facilities image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <rect x="270" y="135" width="260" height="220" fill="#dfe8ff" stroke="#17100b" stroke-width="8"/>
+  <rect x="375" y="185" width="50" height="120" fill="#e33422"/>
+  <rect x="340" y="220" width="120" height="50" fill="#e33422"/>
+  <text x="400" y="100" text-anchor="middle" font-family="Arial Black,Arial" font-size="34" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="398" text-anchor="middle" font-family="Arial Black,Arial" font-size="40" fill="#17100b">PUBLIC HOSPITAL FACILITIES</text>
+</svg>

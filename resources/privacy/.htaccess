@@ -1,0 +1,2 @@
+# Defense in depth for Apache installations; the server document root must still be public/.
+Require all denied

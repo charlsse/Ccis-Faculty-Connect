@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="DepEd School Buildings image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <rect x="170" y="178" width="460" height="175" fill="#ffd223" stroke="#17100b" stroke-width="8"/>
+  <rect x="210" y="220" width="70" height="70" fill="#fff8df" stroke="#17100b" stroke-width="6"/>
+  <rect x="365" y="220" width="70" height="133" fill="#fff8df" stroke="#17100b" stroke-width="6"/>
+  <rect x="520" y="220" width="70" height="70" fill="#fff8df" stroke="#17100b" stroke-width="6"/>
+  <text x="400" y="115" text-anchor="middle" font-family="Arial Black,Arial" font-size="34" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="398" text-anchor="middle" font-family="Arial Black,Arial" font-size="40" fill="#17100b">DEPED SCHOOL BUILDINGS</text>
+</svg>

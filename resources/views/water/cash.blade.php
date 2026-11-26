@@ -1,0 +1,7 @@
+@extends('layouts.dashboard')
+@section('title', 'Record cash payment')
+@section('content')<div class="water-module">
+@include('water.partials.header', ['heading' => 'Record cash payment'])
+<form class="water-card water-form" method="POST" action="{{ route('water.cash.store', $member) }}" data-water-summary>@csrf
+<h2>{{ $member->user->full_name }}</h2><p>{{ $member->collection->title }} · {{ $member->collection->period }}</p><label>Receiving officer<input value="{{ auth()->user()->full_name }}" readonly><small>The signed-in officer is recorded by the server.</small></label><label>Amount received (PHP)<input type="number" min="0.01" step="0.01" name="submitted_amount" value="{{ old('submitted_amount', $member->assigned_amount) }}" required></label><label>Date received<input type="date" name="payment_date" value="{{ old('payment_date', now()->format('Y-m-d')) }}" max="{{ now()->format('Y-m-d') }}" required></label><label>Time received ({{ config('app.timezone') }})<input type="time" name="payment_time" value="{{ old('payment_time') }}" required></label><label>Optional internal note<textarea name="internal_verification_note" maxlength="2000">{{ old('internal_verification_note') }}</textarea></label><label class="water-check"><input type="checkbox" name="confirmed" value="1" required>I received this cash payment and authorize its verified receipt.</label><button class="button button-primary">Review cash payment</button>
+</form></div>@endsection

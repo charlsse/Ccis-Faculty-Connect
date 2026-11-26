@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Special Education Fund image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <rect x="260" y="145" width="280" height="190" fill="#2f7db8" stroke="#17100b" stroke-width="8"/>
+  <path d="M300 180h200M300 225h200M300 270h150" stroke="#fff8df" stroke-width="18"/>
+  <text x="400" y="105" text-anchor="middle" font-family="Arial Black,Arial" font-size="34" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="390" text-anchor="middle" font-family="Arial Black,Arial" font-size="42" fill="#17100b">SPECIAL EDUCATION FUND</text>
+</svg>

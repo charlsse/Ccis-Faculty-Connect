@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Flood Control image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <path d="M60 310c80-70 160 70 240 0s160 70 240 0 140 40 200 5v90H60z" fill="#2f7db8"/>
+  <text x="400" y="137" text-anchor="middle" font-family="Arial Black,Arial" font-size="36" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="245" text-anchor="middle" font-family="Arial Black,Arial" font-size="48" fill="#17100b">FLOOD CONTROL</text>
+</svg>

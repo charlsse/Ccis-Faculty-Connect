@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Audit Framework image placeholder">
+  <rect width="800" height="450" fill="#fff8df"/>
+  <rect x="24" y="24" width="752" height="402" fill="none" stroke="#17100b" stroke-width="12"/>
+  <circle cx="400" cy="225" r="120" fill="#ffd223" stroke="#17100b" stroke-width="10"/>
+  <path d="M340 226 386 272 470 172" fill="none" stroke="#158b52" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="105" text-anchor="middle" font-family="Arial Black,Arial" font-size="34" fill="#e33422">PLACE IMAGE HERE</text>
+  <text x="400" y="390" text-anchor="middle" font-family="Arial Black,Arial" font-size="44" fill="#17100b">AUDIT FRAMEWORK</text>
+</svg>

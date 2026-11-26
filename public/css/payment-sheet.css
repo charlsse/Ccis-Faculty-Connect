@@ -1,0 +1,74 @@
+/* Scoped payment sheet: shared confirmation dialogs retain their own styles. */
+.water-dialog.treasurer-qr-dialog {
+    width: min(560px, calc(100% - 24px));
+    max-width: none;
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--fc-surface, white);
+    color: var(--fc-text, #193a2c);
+}
+.treasurer-qr-dialog[open] { display: flex; flex-direction: column; }
+.payment-sheet-header {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    flex: 0 0 auto; padding: 10px 16px; border-bottom: 1px solid var(--fc-border, #d4e3d9);
+    background: inherit;
+}
+.payment-sheet-header .eyebrow { margin: 0; }
+.water-module .payment-sheet-close {
+    display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px;
+    min-height: 44px; padding: 0; border-radius: 12px; border: 1px solid var(--fc-border, #d4e3d9);
+    background: transparent; color: inherit; font-size: 26px; line-height: 1; box-shadow: none;
+}
+.payment-sheet-body {
+    min-height: 0; padding: 20px; padding-bottom: max(20px, env(safe-area-inset-bottom));
+    overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain;
+    scrollbar-width: thin; scrollbar-color: #81978a transparent; scroll-padding-block: 16px;
+}
+.payment-sheet-body [data-checkout-panel]:not([hidden]) { display: flex; flex-direction: column; gap: 16px; }
+.payment-sheet-body .water-card { border: 0; padding: 0; margin: 0; background: transparent; box-shadow: none; }
+.payment-sheet-body h2 { margin: 0; font-size: clamp(22px, 4vw, 26px); line-height: 1.25; }
+.payment-sheet-body p { margin: 0; line-height: 1.5; }
+.payment-sheet-body .payment-sheet-collection { color: var(--fc-text-muted, #516757); }
+.payment-sheet-body .payment-sheet-amount-label { font-size: .875rem; }
+.payment-sheet-body .checkout-amount { font-size: clamp(2rem, 7vw, 2.75rem); overflow-wrap: anywhere; }
+.payment-sheet-body .checkout-qr-surface { gap: 4px; }
+.payment-sheet-body .checkout-qr-surface .water-qr {
+    display: block; width: min(100%, 250px); max-width: 100%; height: auto;
+    aspect-ratio: 1; object-fit: contain; padding: 10px; background: white; filter: none;
+}
+.payment-sheet-body .checkout-qr-surface .button { align-self: center; width: auto; min-height: 44px; padding: 8px 16px; }
+.payment-sheet-body .payment-sheet-details { grid-template-columns: minmax(70px, 1fr) minmax(0, 2fr); gap: 8px 12px; margin: 0; font-size: .9rem; }
+.payment-sheet-details dd { margin: 0; }
+.payment-sheet-instructions { margin: 0; padding-left: 20px; font-size: .9rem; line-height: 1.5; }
+.payment-sheet-instructions li + li { margin-top: 6px; }
+.payment-sheet-body .water-actions { margin: 0; gap: 8px; }
+.payment-sheet-body .button-primary { min-height: 48px; width: 100%; justify-content: center; }
+.payment-sheet-body .proof-dropzone { min-width: 0; }
+.payment-sheet-body .proof-dropzone p { overflow-wrap: anywhere; }
+.payment-sheet-body :is(input, textarea, select) { scroll-margin-block: 24px; }
+.payment-sheet-body .water-form { min-width: 0; }
+.payment-sheet-body .water-form > h3 { display: none; }
+@media (max-width: 980px) {
+    .dashboard-topbar { min-height: 62px; padding: env(safe-area-inset-top) max(12px, env(safe-area-inset-right)) 0 max(12px, env(safe-area-inset-left)); }
+    .dashboard-topbar :is(.icon-button, .fc-theme-toggle, .profile-button) { width: 44px; height: 44px; min-height: 44px; flex: 0 0 44px; padding: 0; border-radius: 11px; box-shadow: none; }
+    .dashboard-topbar .profile-summary { display: none; }
+    .dashboard-topbar .profile-button { display: grid; place-items: center; }
+    .dashboard-topbar .avatar { width: 32px; height: 32px; }
+    .dashboard-topbar .menu-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+    .dashboard-topbar .menu-toggle span { width: 22px; height: 2px; flex: 0 0 2px; }
+    .dashboard-sidebar { padding-top: max(16px, env(safe-area-inset-top)); padding-bottom: max(16px, env(safe-area-inset-bottom)); max-height: 100dvh; overscroll-behavior: contain; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-sidebar { transition: none; }
+}
+@media (max-width: 600px) {
+    .payment-sheet-body { padding: 16px; padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+    .payment-sheet-body .water-actions { flex-direction: column; align-items: stretch; }
+}
+@media (max-width: 340px) {
+    .water-dialog.treasurer-qr-dialog { width: calc(100% - 16px); }
+}
